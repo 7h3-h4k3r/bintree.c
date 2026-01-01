@@ -11,5 +11,10 @@ int main(){
     t_tree->root->right = t_tree->creatNode(30);
     t_tree->root->left->left = t_tree->creatNode(40);
     t_tree->root->left->right = t_tree->creatNode(50);
+    printf("Preorder ");
     t_tree->preorder(t_tree->root);
+    printf("\nPostorder ");
+    t_tree->postorder(t_tree->root);
+    printf("\nInorder ");
+    t_tree->inorder(t_tree->root);
 }

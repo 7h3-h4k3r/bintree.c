@@ -16,7 +16,19 @@ Node* _creatNode(int data){
     new_node->left = NULL;
     new_node->right = NULL;
 }
+void _inorder(Node *root){
+    if (root==NULL)return;
+    _inorder(root->left);
+    printf("%d ",root->data);
+    _inorder(root->right);
+}
 
+void _postorder(Node *root){
+    if (root==NULL)return;
+    _postorder(root->left);
+    _postorder(root->right);
+    printf("[%d] ",root->data);
+}
 void _preorder(Node *root){
     if (root==NULL){
         return;
@@ -30,5 +42,7 @@ void _preorder(Node *root){
 void __init__(bintree *t_tree){
     t_tree->root;
     t_tree->creatNode = _creatNode;
-    t_tree->preorder =  _preorder;    
+    t_tree->preorder =  _preorder;
+    t_tree->inorder =  _inorder;  
+    t_tree->postorder =  _postorder;   
 }
